@@ -62,13 +62,40 @@
                             <div class="app-time">2:47 AM</div>
                             <div class="app-title">Impulse Card</div>
                         </div>
-                        <div class="notification-card">
-                            <div class="notification-icon">🤔</div>
-                            <div class="notification-title">Hold on a sec...</div>
-                            <div class="notification-merchant">Amazon.co.uk</div>
-                            <div class="notification-amount">£127.99</div>
-                            <div class="notification-message">This exceeds your discretionary budget.<br>Want to explain why you need this?</div>
-                            <button class="justify-button">Tell me why you need this</button>
+
+                        <div class="phone-content">
+                            <div class="notification-card">
+                                <div class="notification-icon">🤔</div>
+                                <div class="notification-title">Hold on a sec...</div>
+                                <div class="notification-merchant">Amazon.co.uk</div>
+                                <div class="notification-amount">£127.99</div>
+                                <div class="notification-message">This exceeds your discretionary budget.<br>Want to explain why you need this?</div>
+                                <button class="justify-button" id="justify-button">Tell me why you need this</button>
+                            </div>
+
+                            <!-- Chat Interface (Initially Hidden) -->
+                            <div class="chat-interface" id="chat-interface" style="display: none;">
+                                <div class="chat-header">
+                                    <div class="chat-back-button">←</div>
+                                    <div class="chat-title">Justify Purchase</div>
+                                    <div class="chat-amount">£127.99</div>
+                                </div>
+
+                                <div class="chat-messages" id="chat-messages">
+                                    <!-- Messages will be dynamically added here -->
+                                </div>
+
+                                <div class="chat-input-container" id="chat-input-container" style="display: none;">
+                                    <div class="chat-input">
+                                        <div class="input-text" id="chat-input-text" contenteditable="false" data-placeholder="Why do you need this?"></div>
+                                        <button class="chat-send-button" id="chat-send-button">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2 10L18 2L10 18L9 11L2 10Z" fill="currentColor"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

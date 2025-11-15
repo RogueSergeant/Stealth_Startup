@@ -287,3 +287,176 @@ if ('IntersectionObserver' in window) {
 console.log('%cImpulse Card', 'font-size: 24px; font-weight: bold; color: #0066CC;');
 console.log('%cStop overspending before it happens 💙', 'font-size: 14px; color: #666;');
 console.log('Interested in the code? Email: alfie@impulsecard.co.uk');
+
+// ===== INTERACTIVE CHAT DEMO =====
+const justifyButton = document.getElementById('justify-button');
+const notificationCard = document.querySelector('.notification-card');
+const chatInterface = document.getElementById('chat-interface');
+const chatMessages = document.getElementById('chat-messages');
+const chatInputContainer = document.getElementById('chat-input-container');
+const chatInput = document.getElementById('chat-input-text');
+const chatSendButton = document.getElementById('chat-send-button');
+const chatBackButton = document.querySelector('.chat-back-button');
+
+let chatAnimationInProgress = false;
+
+// Function to create a message bubble
+function createMessage(text, isUser = false, isTyping = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${isUser ? 'user' : 'ai'}`;
+
+    if (isTyping) {
+        const typingIndicator = document.createElement('div');
+        typingIndicator.className = 'typing-indicator';
+        typingIndicator.innerHTML = `
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+        `;
+        messageDiv.appendChild(typingIndicator);
+    } else {
+        const bubble = document.createElement('div');
+        bubble.className = 'message-bubble';
+        bubble.textContent = text;
+        messageDiv.appendChild(bubble);
+    }
+
+    return messageDiv;
+}
+
+// Function to type text character by character
+function typeText(element, text, speed = 30) {
+    return new Promise((resolve) => {
+        let index = 0;
+        element.textContent = '';
+
+        const interval = setInterval(() => {
+            if (index < text.length) {
+                element.textContent += text[index];
+                index++;
+                // Auto-scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            } else {
+                clearInterval(interval);
+                resolve();
+            }
+        }, speed);
+    });
+}
+
+// Main chat animation sequence
+async function startChatAnimation() {
+    if (chatAnimationInProgress) return;
+    chatAnimationInProgress = true;
+
+    // Hide notification card
+    notificationCard.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    notificationCard.style.opacity = '0';
+    notificationCard.style.transform = 'translateY(-20px)';
+
+    // Show chat interface after a short delay
+    setTimeout(() => {
+        notificationCard.style.display = 'none';
+        chatInterface.style.display = 'flex';
+
+        // Start the conversation animation
+        runConversation();
+    }, 300);
+}
+
+async function runConversation() {
+    // Clear any existing messages
+    chatMessages.innerHTML = '';
+
+    // Step 1: Show input field (500ms delay)
+    await new Promise(resolve => setTimeout(resolve, 500));
+    chatInputContainer.style.display = 'block';
+
+    // Step 2: Simulate user typing (1 second delay before starting)
+    await new Promise(resolve => setTimeout(resolve, 800));
+    const userMessage = "I feel like this would bring me a lot of joy";
+
+    // Show the text appearing in the input field
+    if (chatInput) {
+        chatInput.textContent = '';
+        for (let i = 0; i <= userMessage.length; i++) {
+            chatInput.textContent = userMessage.substring(0, i);
+            await new Promise(resolve => setTimeout(resolve, 50));
+        }
+    }
+
+    // Step 3: Wait a moment, then click send (animate button)
+    await new Promise(resolve => setTimeout(resolve, 400));
+    if (chatSendButton) {
+        chatSendButton.style.transform = 'scale(0.9)';
+        setTimeout(() => {
+            chatSendButton.style.transform = 'scale(1)';
+        }, 100);
+    }
+
+    // Step 4: Move message to chat area
+    await new Promise(resolve => setTimeout(resolve, 200));
+    chatInputContainer.style.display = 'none';
+
+    const userMessageBubble = createMessage(userMessage, true);
+    chatMessages.appendChild(userMessageBubble);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Step 5: Show AI typing indicator (1.5 second delay)
+    await new Promise(resolve => setTimeout(resolve, 1200));
+    const typingIndicator = createMessage('', false, true);
+    chatMessages.appendChild(typingIndicator);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Step 6: Replace typing indicator with AI response
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    typingIndicator.remove();
+
+    const aiResponse = "Declined - you've asked me to help you focus on purchases that are actually going to bring something to your life. Instead of buying this, how about you text a friend to go for a walk with you?";
+    const aiMessageBubble = createMessage('', false);
+    const bubble = aiMessageBubble.querySelector('.message-bubble');
+    bubble.classList.add('ai-declined-message');
+    chatMessages.appendChild(aiMessageBubble);
+
+    // Type out the AI response
+    await typeText(bubble, aiResponse, 25);
+
+    // Scroll to bottom
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    chatAnimationInProgress = false;
+}
+
+// Reset the demo to initial state
+function resetDemo() {
+    chatAnimationInProgress = false;
+    chatInterface.style.display = 'none';
+    notificationCard.style.display = 'block';
+    notificationCard.style.opacity = '1';
+    notificationCard.style.transform = 'translateY(0)';
+    chatMessages.innerHTML = '';
+    chatInputContainer.style.display = 'none';
+    if (chatInput) chatInput.textContent = '';
+}
+
+// Event listeners
+if (justifyButton) {
+    justifyButton.addEventListener('click', startChatAnimation);
+}
+
+if (chatBackButton) {
+    chatBackButton.addEventListener('click', resetDemo);
+}
+
+// Allow restarting the animation by clicking the chat interface (optional)
+if (chatInterface) {
+    chatInterface.addEventListener('click', (e) => {
+        // Only restart if clicking on the chat area, not on buttons
+        if (e.target === chatInterface || e.target === chatMessages) {
+            if (!chatAnimationInProgress) {
+                resetDemo();
+                setTimeout(() => startChatAnimation(), 100);
+            }
+        }
+    });
+}

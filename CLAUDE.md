@@ -49,10 +49,12 @@ git push origin main
 - **Analytics**: Google Analytics 4 (configured but commented out in index.html:28-36)
 
 ### Key Files
-- `index.html` - Single-page landing page (all content)
-- `css/style.css` - All styling (ADHD-friendly design principles)
-- `js/main.js` - Analytics tracking, form handling, smooth scrolling
+- `index.html` - Single-page landing page (all content including interactive phone mockup)
+- `css/style.css` - All styling (ADHD-friendly design principles, dark mode only)
+- `js/main.js` - Analytics tracking, form handling, smooth scrolling, interactive chat demo
 - `CNAME` - Custom domain configuration (impulsecard.co.uk)
+- `SETUP_GUIDE.md` - Comprehensive step-by-step deployment guide
+- `README.md` - Project documentation and quick start guide
 
 ### Design System
 The site follows accessibility-first design principles (originally inspired by ADHD-friendly design but beneficial for all users):
@@ -64,10 +66,12 @@ The site follows accessibility-first design principles (originally inspired by A
 - Mobile-first responsive design
 
 **Color Palette:**
-- Primary: `#0066CC` (trust blue)
+- Primary: `#0066CC` (trust blue) and cyan gradient (`#00F0FF`)
 - CTA: `#FF6B35` (coral orange)
 - Success: `#00C853` (green)
-- Dark mode only (light mode removed in recent commit)
+- Warning/Alert: `#FBBF24` (amber yellow)
+- Background: Dark mode only - `#0A0E1A` (deep navy) with `#1A1F2E` gradients
+- Text: White and high-contrast grays
 
 **Typography:** Inter font family, 18px body text (16px mobile), 1.6 line-height
 
