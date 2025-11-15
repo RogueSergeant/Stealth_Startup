@@ -701,7 +701,6 @@ strong {
 
 .value-card::before,
 .problem-card::before,
-.step-card::before,
 .help-card::before {
     content: '';
     position: absolute;
@@ -726,7 +725,6 @@ strong {
 
 .value-card:hover::before,
 .problem-card:hover::before,
-.step-card:hover::before,
 .help-card:hover::before {
     transform: scaleX(1);
 }
@@ -759,6 +757,7 @@ strong {
 .step-card {
     position: relative;
     padding-top: 80px;
+    overflow: visible;
 }
 
 .step-badge {
@@ -1103,7 +1102,23 @@ strong {
 .section-waitlist {
     position: relative;
     background: var(--bg-primary);
-    overflow: hidden;
+    overflow: visible;
+    padding-top: 120px !important;
+    padding-bottom: var(--section-padding-desktop) !important;
+}
+
+.section-waitlist .container {
+    position: relative;
+    z-index: 1;
+}
+
+.section-waitlist .section-title {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.section-waitlist .section-subtitle {
+    margin-top: 0;
 }
 
 .waitlist-background {
@@ -1457,6 +1472,29 @@ strong {
     }
 }
 
+@keyframes checkbox-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(192, 132, 252, 0.6),
+                    0 0 40px rgba(192, 132, 252, 0.4),
+                    0 0 60px rgba(192, 132, 252, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(192, 132, 252, 0.8),
+                    0 0 60px rgba(192, 132, 252, 0.6),
+                    0 0 90px rgba(192, 132, 252, 0.4);
+    }
+}
+
+/* Checkbox glow effect */
+.form-checkbox.glow-checkbox {
+    animation: checkbox-glow 2s ease-in-out 3;
+    border-radius: var(--radius-input);
+    padding: 12px;
+    margin: -12px;
+    background: rgba(192, 132, 252, 0.1);
+    transition: var(--transition-standard);
+}
+
 /* ========================================
    RESPONSIVE DESIGN - TABLET (768px and below)
    ======================================== */
@@ -1546,6 +1584,12 @@ strong {
         transform: scale(1);
     }
 
+    /* Waitlist Section */
+    .section-waitlist {
+        padding-top: 90px !important;
+        padding-bottom: var(--section-padding-mobile) !important;
+    }
+
     /* Footer */
     .footer-content {
         grid-template-columns: 1fr;
@@ -1619,6 +1663,12 @@ strong {
     /* Pricing */
     .pricing-amount {
         font-size: 36px;
+    }
+
+    /* Waitlist Section */
+    .section-waitlist {
+        padding-top: 90px !important;
+        padding-bottom: var(--section-padding-mobile) !important;
     }
 }
 
