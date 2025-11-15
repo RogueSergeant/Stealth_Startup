@@ -50,9 +50,31 @@ fetchWaitlistCount();
 // ===== FORM HANDLING =====
 const form = document.getElementById('waitlist-form');
 const thankYouMessage = document.getElementById('thank-you');
+const formContainer = document.getElementById('form-container');
+
+// ===== REFERRAL SOURCE "OTHER" FIELD TOGGLE =====
+const referralSourceSelect = document.getElementById('referral_source');
+const referralOtherContainer = document.getElementById('referral_other_container');
+
+if (referralSourceSelect && referralOtherContainer) {
+    referralSourceSelect.addEventListener('change', function() {
+        if (this.value === 'other') {
+            referralOtherContainer.style.display = 'block';
+        } else {
+            referralOtherContainer.style.display = 'none';
+            // Clear the "other" text field when hidden
+            const referralOtherInput = document.getElementById('referral_other');
+            if (referralOtherInput) {
+                referralOtherInput.value = '';
+            }
+        }
+    });
+}
 
 if (form) {
     form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
         // Track form submission with Google Analytics (if configured)
         if (typeof gtag !== 'undefined') {
             gtag('event', 'submit', {
@@ -61,19 +83,14 @@ if (form) {
             });
         }
 
+        // Get submit button and show loading state
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+
         // Check if interview checkbox is checked
         const interviewCheckbox = form.querySelector('input[name="interview_volunteer"]');
-
-        // Note: Formspree will handle the actual form submission
-        // This code prepares the thank you message
-
-        // After successful submission (Formspree redirects or shows success)
-        // You can handle the thank you message display here if needed
-
-        // For better UX, you might want to use AJAX submission
-        // Here's an example of AJAX form submission:
-        /*
-        e.preventDefault();
 
         const formData = new FormData(form);
 
@@ -109,16 +126,26 @@ if (form) {
                     });
                 }
 
-                // Scroll to thank you message
-                thankYouMessage.scrollIntoView({ behavior: 'smooth' });
+                // Scroll to form container centered in viewport after brief delay to let layout settle
+                setTimeout(() => {
+                    if (formContainer) {
+                        formContainer.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }
+                }, 50);
             } else {
                 throw new Error('Form submission failed');
             }
         }).catch(error => {
             console.error('Error:', error);
             alert('Oops! There was a problem submitting your form. Please try again.');
+
+            // Reset button state on error
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
         });
-        */
     });
 }
 
