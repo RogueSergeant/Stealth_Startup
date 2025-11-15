@@ -17,7 +17,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ===== WAITLIST COUNTER =====
 // Update this number regularly based on actual signups
 // You can also fetch this from a backend API or Google Sheets
-let waitlistCount = 247;
+let waitlistCount = 847;
 
 function updateWaitlistCount() {
     const countElement = document.getElementById('waitlist-count');
@@ -202,7 +202,7 @@ if (emailInput) {
     });
 
     emailInput.addEventListener('focus', function() {
-        this.style.borderColor = '#0066CC';
+        this.style.borderColor = '#0066FF';
     });
 }
 
