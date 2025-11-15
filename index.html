@@ -79,7 +79,7 @@
                                 <!-- Initial State: Notification Card -->
                                 <div class="notification-card" id="notificationCard">
                                     <div class="notification-icon">🤔</div>
-                                    <h3 class="notification-title">Hold on a sec...</h3>
+                                    <div class="notification-title" role="heading" aria-level="3">Hold on a sec...</div>
                                     <div class="notification-details">
                                         <p class="notification-merchant">Amazon.co.uk</p>
                                         <p class="notification-amount">£127.99</p>
@@ -720,7 +720,7 @@
                         </div>
 
                         <!-- Honeypot -->
-                        <input type="text" name="_gotcha" style="position: absolute; left: -5000px;" tabindex="-1" autocomplete="off">
+                        <input type="text" name="_gotcha" style="position: absolute; left: -5000px;" tabindex="-1" autocomplete="off" aria-label="Leave this field blank">
 
                         <!-- Submit Button -->
                         <button type="submit" class="btn btn-primary btn-lg btn-full" id="submitBtn">
@@ -896,6 +896,6 @@
     </main>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

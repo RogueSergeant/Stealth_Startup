@@ -191,11 +191,12 @@ strong {
     position: absolute;
     top: -40px;
     left: 0;
-    background: var(--primary-violet);
-    color: white;
-    padding: 8px;
+    background: #1F2937;
+    color: #FFFFFF;
+    padding: 8px 16px;
     text-decoration: none;
     z-index: 100;
+    font-weight: 600;
 }
 
 .skip-link:focus {
@@ -858,8 +859,9 @@ strong {
 }
 
 .founder-contact a {
-    color: var(--primary-violet);
+    color: #C084FC;
     font-weight: 600;
+    text-decoration: underline;
 }
 
 /* ========================================
@@ -1369,8 +1371,9 @@ strong {
 }
 
 .footer-contact a {
-    color: var(--primary-violet);
+    color: #C084FC;
     font-weight: 600;
+    text-decoration: underline;
 }
 
 .footer-note {
