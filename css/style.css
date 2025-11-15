@@ -1,4 +1,16 @@
 /* ========================================
+   FONT FACE DECLARATIONS
+   ======================================== */
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('fonts/inter-var.woff2') format('woff2-variations');
+}
+
+/* ========================================
    CSS CUSTOM PROPERTIES (Design System)
    ======================================== */
 
@@ -17,7 +29,7 @@
 
     /* Text */
     --text-primary: #FAFAFA;
-    --text-secondary: #9CA3AF;
+    --text-secondary: #D1D5DB;
     --text-tertiary: #E5E7EB;
 
     /* Gradients */
@@ -699,21 +711,6 @@ strong {
     overflow: hidden;
 }
 
-.value-card::before,
-.problem-card::before,
-.help-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--gradient-primary);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
 .value-card:hover,
 .problem-card:hover,
 .step-card:hover,
@@ -721,12 +718,6 @@ strong {
     transform: translateY(-8px);
     box-shadow: var(--shadow-card-hover);
     border-color: var(--primary-violet);
-}
-
-.value-card:hover::before,
-.problem-card:hover::before,
-.help-card:hover::before {
-    transform: scaleX(1);
 }
 
 .card-icon {

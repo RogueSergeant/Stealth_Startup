@@ -22,10 +22,8 @@
     <!-- Favicon (using emoji as temporary placeholder) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💳</text></svg>">
 
-    <!-- Preconnect to Google Fonts for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Self-hosted fonts for performance -->
+    <link rel="preload" href="css/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -695,14 +693,14 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="form-checkbox">
-                                        <input type="checkbox" name="adhd_status" value="yes">
+                                    <label class="form-checkbox" for="adhdStatus">
+                                        <input type="checkbox" name="adhd_status" value="yes" id="adhdStatus">
                                         <span class="checkbox-label">I have ADHD (diagnosed or self-identified)</span>
                                     </label>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="form-checkbox">
+                                    <label class="form-checkbox" for="interviewVolunteer">
                                         <input type="checkbox" name="interview_volunteer" value="yes" id="interviewVolunteer">
                                         <span class="checkbox-label">I'm happy to do a 20-min interview (£10 Amazon voucher)</span>
                                     </label>
@@ -712,8 +710,8 @@
 
                         <!-- Required Marketing Consent -->
                         <div class="form-group">
-                            <label class="form-checkbox">
-                                <input type="checkbox" name="marketing_consent" value="yes" required>
+                            <label class="form-checkbox" for="marketingConsent">
+                                <input type="checkbox" name="marketing_consent" value="yes" id="marketingConsent" required>
                                 <span class="checkbox-label">
                                     I want to hear when this launches and major updates. I can unsubscribe anytime.
                                     <span class="required">*</span>
