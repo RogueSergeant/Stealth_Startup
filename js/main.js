@@ -81,6 +81,52 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ========================================
+   INTERVIEW BUTTON - AUTO EXPAND & HIGHLIGHT
+   ======================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const interviewBtn = document.getElementById('interviewBtn');
+
+    if (interviewBtn) {
+        interviewBtn.addEventListener('click', function() {
+            // Let the default scroll behavior happen first
+            setTimeout(() => {
+                const expandToggle = document.getElementById('expandToggle');
+                const expandContent = document.getElementById('expandContent');
+                const interviewCheckboxLabel = document.querySelector('label.form-checkbox:has(#interviewVolunteer)');
+
+                // Expand the optional section if it's not already expanded
+                if (expandToggle && expandContent && expandContent.style.display !== 'block') {
+                    expandContent.style.display = 'block';
+                    expandToggle.classList.add('active');
+                }
+
+                // Add glow effect to the interview checkbox
+                if (interviewCheckboxLabel) {
+                    interviewCheckboxLabel.classList.add('glow-checkbox');
+
+                    // Scroll the checkbox into view smoothly
+                    setTimeout(() => {
+                        interviewCheckboxLabel.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }, 300);
+
+                    // Remove the glow class after animation completes (2s * 3 iterations = 6s)
+                    setTimeout(() => {
+                        interviewCheckboxLabel.classList.remove('glow-checkbox');
+                    }, 6000);
+                }
+
+                // Track this interaction
+                trackEvent('interview_button_clicked');
+            }, 800);
+        });
+    }
+});
+
+/* ========================================
    SCROLL DEPTH TRACKING
    ======================================== */
 

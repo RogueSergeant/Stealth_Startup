@@ -22,10 +22,8 @@
     <!-- Favicon (using emoji as temporary placeholder) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💳</text></svg>">
 
-    <!-- Preconnect to Google Fonts for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Self-hosted fonts for performance -->
+    <link rel="preload" href="css/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -67,10 +65,10 @@
 
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Stop Overspending Before It Happens</h1>
+                    <h1 class="hero-title">Stop Overspending Before<br>It Happens</h1>
                     <p class="hero-subtitle">
-                        An AI-powered card that blocks impulse purchases before they happen.
-                        Justify why you need it. Get approved, delayed, or gently declined—typically under 10 seconds.
+                        An AI-powered card that makes you pause before impulse purchases.
+                        Justify why you need it. Get approved, delayed, or gently declined.<br>All in 10 seconds.
                     </p>
 
                     <!-- Interactive Phone Mockup -->
@@ -81,16 +79,16 @@
                                 <!-- Initial State: Notification Card -->
                                 <div class="notification-card" id="notificationCard">
                                     <div class="notification-icon">🤔</div>
-                                    <h3 class="notification-title">Hold on a sec...</h3>
+                                    <div class="notification-title" role="heading" aria-level="3">Hold on a sec...</div>
                                     <div class="notification-details">
                                         <p class="notification-merchant">Amazon.co.uk</p>
                                         <p class="notification-amount">£127.99</p>
                                     </div>
                                     <p class="notification-message">
-                                        This exceeds your discretionary budget. Care to explain why you need this?
+                                        This purchase wasn't in our agreed plan. Care to explain why you need this?
                                     </p>
                                     <button class="btn btn-gradient" id="justifyBtn">
-                                        Tell me why you need this
+                                        Open Chat
                                     </button>
                                 </div>
 
@@ -131,7 +129,7 @@
                         <svg class="trust-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        Built by Alfie Roberts, a software engineer with ADHD who lost £1,623 in 2024 to impulse purchases
+                        Built by Alfie Roberts, a Master's student with ADHD who lost over £7,000 in 2024 to impulse purchases
                     </p>
                 </div>
             </div>
@@ -154,8 +152,8 @@
                         </div>
                         <h3 class="card-title">Direct Influence on Product Decisions</h3>
                         <p class="card-description">
-                            Founding members don't just test features—you decide which features get built first, how AI evaluations work, what friction feels helpful vs annoying.
-                            Your real experiences directly shape the roadmap. This is co-creation, not a focus group.
+                            Founding members will directly influence what gets built, how it works, and what problems we solve first.
+                            Get access to our Discord community to give feedback and ideas.
                         </p>
                     </div>
 
@@ -180,8 +178,8 @@
                         </div>
                         <h3 class="card-title">First to Try It</h3>
                         <p class="card-description">
-                            Pilot programme targeting Q1 2026 with 100 users (timeline depends on funding and development). Founding members get priority.
-                            Help us test, break things, and make it better.
+                            Pilot programme launches Q1 2027 with 100 users. Founding members get priority.
+                            Help us test, and make it better whilst saving yourself money.
                         </p>
                     </div>
                 </div>
@@ -367,19 +365,19 @@
                     </div>
 
                     <div class="founder-story">
-                        <p>Last year, I lost £1,623 to impulse purchases I regretted within 24 hours.</p>
+                        <p>Last year, I lost thousands to impulse purchases I regretted within 24 hours.</p>
 
-                        <p>£89 for a mechanical keyboard I used twice. Three Kindle books I never read. A £140 "productivity course" I never started. Hobby after hobby, each one "definitely the thing this time."</p>
+                        <p>A £490 smart ring when I already had a smart watch. XR glasses for £340 that I've used once. A £250 iPad still in its box. Hobby after hobby, each one "definitely the thing this time."</p>
 
                         <p>I have ADHD. Executive function challenges mean that in the moment, my brain genuinely believes every purchase is essential. By the time I realise it wasn't, the money's gone.</p>
 
-                        <p>I tried everything: Monzo pots, YNAB budgets, hiding my cards, deleting shopping apps. None of it worked because they all rely on me remembering to check them <em>before</em> I buy something. But when I see something I want, I forget those tools exist.</p>
+                        <p>I tried everything: Starling pots. Snoop, and Emma finance trackers. Physically hiding my cards. Deleting shopping apps. None of it worked because they all rely on me remembering to check them before I buy. But when I see something I want, I forget those tools exist.</p>
 
-                        <p>I needed something that didn't rely on my memory or willpower. Something that would physically stop me and make me explain myself before I could complete the purchase.</p>
+                        <p>I needed something that didn't rely on my memory or willpower. Something that would physically stop me and make me explain myself before completing the purchase.</p>
 
-                        <p>So I'm building the card I needed. One that prevents overspending before it happens, not just tells you about it afterwards.</p>
+                        <p>So I'm building it. A prepaid card that uses AI to block overspending before it happens, not just tell you about it afterwards. I've spent the last year studying AI at Westminster, and now I'm applying that to solve the problem I live with every day.</p>
 
-                        <p>I'm sharing this work-in-progress because I strongly suspect I'm not the only one who needs this. If you've ever felt that same frustration—knowing you need to stop, but unable to do it in the moment—this is for you too.</p>
+                        <p>I'm sharing this work-in-progress because I suspect I'm not the only one who needs this. If you've ever felt that same frustration, knowing you need to stop but being unable to in the moment, this is for you too.</p>
                     </div>
 
                     <div class="founder-contact">
@@ -651,7 +649,7 @@
                             20-minute video call about your impulse spending challenges. £10 Amazon voucher as thanks.
                             Your insights directly shape what gets built.
                         </p>
-                        <a href="#waitlist" class="btn btn-secondary">I'll Do an Interview</a>
+                        <a href="#waitlist" class="btn btn-secondary" id="interviewBtn">I'll Do an Interview</a>
                     </div>
 
                     <div class="help-card">
@@ -842,14 +840,14 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="form-checkbox">
-                                        <input type="checkbox" name="adhd_status" value="yes">
+                                    <label class="form-checkbox" for="adhdStatus">
+                                        <input type="checkbox" name="adhd_status" value="yes" id="adhdStatus">
                                         <span class="checkbox-label">I have ADHD (diagnosed or self-identified)</span>
                                     </label>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="form-checkbox">
+                                    <label class="form-checkbox" for="interviewVolunteer">
                                         <input type="checkbox" name="interview_volunteer" value="yes" id="interviewVolunteer">
                                         <span class="checkbox-label">I'm happy to do a 20-min interview (£10 Amazon voucher)</span>
                                     </label>
@@ -859,8 +857,8 @@
 
                         <!-- Required Marketing Consent -->
                         <div class="form-group">
-                            <label class="form-checkbox">
-                                <input type="checkbox" name="marketing_consent" value="yes" required>
+                            <label class="form-checkbox" for="marketingConsent">
+                                <input type="checkbox" name="marketing_consent" value="yes" id="marketingConsent" required>
                                 <span class="checkbox-label">
                                     I want to hear when this launches and major updates. I can unsubscribe anytime.
                                     <span class="required">*</span>
@@ -869,7 +867,7 @@
                         </div>
 
                         <!-- Honeypot -->
-                        <input type="text" name="_gotcha" style="position: absolute; left: -5000px;" tabindex="-1" autocomplete="off">
+                        <input type="text" name="_gotcha" style="position: absolute; left: -5000px;" tabindex="-1" autocomplete="off" aria-label="Leave this field blank">
 
                         <!-- Submit Button -->
                         <button type="submit" class="btn btn-primary btn-lg btn-full" id="submitBtn">
@@ -1055,6 +1053,6 @@
     </main>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
