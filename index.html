@@ -66,12 +66,12 @@
                             <div class="app-title">Impulse Card</div>
                         </div>
                         <div class="notification-card">
-                            <div class="notification-icon">⚠️</div>
-                            <div class="notification-title">Transaction Declined</div>
+                            <div class="notification-icon">🤔</div>
+                            <div class="notification-title">Hold on a sec...</div>
                             <div class="notification-merchant">Amazon.co.uk</div>
                             <div class="notification-amount">£127.99</div>
-                            <div class="notification-message">Open app to justify this purchase</div>
-                            <button class="justify-button">Justify Purchase</button>
+                            <div class="notification-message">This exceeds your discretionary budget.<br>Want to explain why you need this?</div>
+                            <button class="justify-button">Tell me why I need this</button>
                         </div>
                     </div>
                 </div>
@@ -94,8 +94,14 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
                         </svg>
                     </div>
-                    <h3>The Late-Night Purchase</h3>
-                    <p>2:47am. Click. £127 gone. "I'll use it for sure this time." Morning comes. You can't even remember what you bought. But the charge is there. Again.</p>
+                    <h3>The Late-Night Drone</h3>
+                    <p>2:47am. Can't sleep. Scrolling Amazon. "This drone will definitely make me happy."
+
+One click. £127 gone.
+
+Morning: email receipt. Drone? What drone? Scroll order history. Oh. That drone. Delivery Thursday.
+
+Thursday: it arrives. You open it once. It's in your cupboard now. £127 in a cupboard.</p>
                 </div>
 
                 <div class="card">
@@ -104,8 +110,14 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                         </svg>
                     </div>
-                    <h3>The Notification</h3>
-                    <p>Monday morning. Check your bank. £680 spent this weekend. How? You were just "browsing." The dopamine high is gone. The money is too.</p>
+                    <h3>The Weekend Blackout</h3>
+                    <p>Friday night: new hobby idea. Mechanical keyboards. "This is it. This is the thing."
+
+Order £89 keycaps. £140 switches. £200 custom case.
+
+Monday morning: banking app notification. "You spent £680 this weekend."
+
+The keyboard parts are still in boxes. Unopened. You've moved on to fountain pens now.</p>
                 </div>
 
                 <div class="card">
@@ -114,8 +126,16 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                         </svg>
                     </div>
-                    <h3>The Cycle</h3>
-                    <p>Download budgeting app. Set limits. Feel hopeful. Tuesday night, executive function crashes. Limits? What limits? You'll check the app tomorrow. You never do.</p>
+                    <h3>The Productivity Trap</h3>
+                    <p>"This Notion template will fix my life." £45.
+
+"This productivity course will make me organized." £140.
+
+"These 12 Kindle books about ADHD..." £67. You read three pages of one.
+
+Next week, you see an ad for a different system. "Maybe this one will work."
+
+You forgot you bought the last one. Again.</p>
                 </div>
             </div>
 
@@ -167,6 +187,37 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2>Simple, Honest Pricing</h2>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="price-amount">£15<span class="price-period">/month</span></div>
+                    <p class="price-description">1-month free trial. Cancel anytime.</p>
+                </div>
+                <div class="pricing-value">
+                    <h3>The Math That Matters</h3>
+                    <div class="value-comparison">
+                        <div class="value-item">
+                            <div class="value-number">£15/month</div>
+                            <div class="value-label">Subscription cost</div>
+                        </div>
+                        <div class="value-vs">vs</div>
+                        <div class="value-item highlight">
+                            <div class="value-number">£143/month</div>
+                            <div class="value-label">Average impulse spending (from our research)</div>
+                        </div>
+                    </div>
+                    <div class="roi-callout">
+                        <strong>= £128/month saved</strong><br>
+                        <span class="roi-text">That's <strong>9x ROI</strong> in your first month</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Differentiation Section -->
     <section class="differentiation">
         <div class="container">
@@ -174,22 +225,22 @@
 
             <div class="comparison">
                 <div class="comparison-column">
-                    <h3>Monzo / Revolut / Starling</h3>
+                    <h3>Traditional Banks</h3>
                     <ul class="comparison-list negative">
-                        <li>Spending notifications <em>after</em> you've paid</li>
-                        <li>Budgets are suggestions, not blocks</li>
-                        <li>Easy to ignore or override</li>
-                        <li>Built for neurotypical brains</li>
+                        <li>Show you the damage after you've spent</li>
+                        <li>Require you to remember to check your budget</li>
+                        <li>Rely on willpower and self-control</li>
+                        <li>Built for brains that work differently than yours</li>
                     </ul>
                 </div>
 
                 <div class="comparison-column highlight">
                     <h3>Impulse Card</h3>
                     <ul class="comparison-list positive">
-                        <li>✅ Blocks transactions <em>before</em> they happen</li>
-                        <li>✅ Forces you to pause and justify</li>
-                        <li>✅ Designed to be hard to override</li>
-                        <li>✅ Built for ADHD impulse control</li>
+                        <li>Stops you before the transaction completes</li>
+                        <li>Creates mandatory pause before purchase</li>
+                        <li>External accountability built into the payment</li>
+                        <li>Built for ADHD brains that need structure</li>
                     </ul>
                 </div>
             </div>
@@ -214,8 +265,8 @@
             </div>
 
             <div class="cost-breakdown">
-                <p class="cost-math"><strong>£12/month subscription</strong> pays for itself if you prevent just <strong>one £50 impulse purchase every 4 months.</strong></p>
-                <p class="cost-roi">For most ADHD adults, that's <strong>5x ROI</strong> in the first year.</p>
+                <p class="cost-math"><strong>£15/month subscription</strong> pays for itself if you prevent just <strong>one £60 impulse purchase every 4 months.</strong></p>
+                <p class="cost-roi">For most ADHD adults, that's <strong>9x ROI</strong> in the first year.</p>
             </div>
 
             <div class="trust-signals-grid">
@@ -255,17 +306,18 @@
             <div class="target-content">
                 <p class="intro">If you have ADHD and you've ever:</p>
                 <ul class="target-list">
-                    <li>Made a late-night purchase you regretted</li>
-                    <li>Opened your banking app and felt shocked at your balance</li>
-                    <li>Tried budgeting apps but they never stuck</li>
-                    <li>Wished someone would just <em>stop you</em> before you overspend</li>
-                    <li>Lost hundreds (or thousands) to impulse spending</li>
+                    <li>Hyperfocused on a new hobby and bought £200 of supplies you used once</li>
+                    <li>Forgotten your budget 30 seconds after checking it</li>
+                    <li>Felt the dopamine hit fade before the package even arrived</li>
+                    <li>Tried "just being more careful" for the 47th time</li>
+                    <li>Spent money you didn't have because future-you would "figure it out"</li>
+                    <li>Uninstalled shopping apps, then reinstalled them the next day</li>
                 </ul>
                 <p class="emphasis">...this is for you.</p>
 
                 <div class="personal-story">
                     <h3>Why I'm Building This</h3>
-                    <p><strong>I'm Alfie, a software engineer with ADHD.</strong> Last year, I lost £1,623 to impulse purchases. The £89 keyboard I used twice. Three unread Kindle books in one night. A £140 "productivity course" I never started.</p>
+                    <p><strong>I'm Alfie Roberts, a software engineer with ADHD.</strong> Last year, I lost £1,623 to impulse purchases. The £89 keyboard I used twice. Three unread Kindle books in one night. A £140 "productivity course" I never started.</p>
                     <p>I tried Monzo pots, budget apps, even hiding my cards. Nothing worked because they all relied on me having self-control <em>in the moment</em>—exactly what ADHD brains struggle with.</p>
                     <p><strong>So I'm building the card I needed:</strong> One that stops me before I overspend, not just tells me about it after.</p>
                     <p class="credentials">Software engineer at Deliveroo • Diagnosed ADHD 2019 • <a href="mailto:alfie@impulsecard.co.uk">alfie@impulsecard.co.uk</a></p>
@@ -312,7 +364,7 @@
     <section id="waitlist" class="waitlist">
         <div class="container">
             <h2>Join the Waitlist</h2>
-            <p class="section-subheadline">Get early access + 2 months free when we launch. <span class="urgency">First 1,000 people only.</span> (847 spots taken)</p>
+            <p class="section-subheadline">Get early access + 2 months free when we launch. <span class="subtle-urgency">Early access for first 1,000 signups</span> (847 spots taken)</p>
 
             <form id="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="waitlist-form">
                 <div class="form-group">
@@ -370,7 +422,7 @@
                 </ul>
                 <p>Check your inbox in the next few minutes for a confirmation email.</p>
                 <p class="interview-note" style="display: none;">We'll be in touch soon about scheduling a chat. You'll get a £10 Amazon voucher as thanks!</p>
-                <p class="signature">— Alfie</p>
+                <p class="signature">— Alfie Roberts</p>
             </div>
         </div>
     </section>
@@ -382,6 +434,21 @@
 
             <div class="faq-list">
                 <div class="faq-item">
+                    <h3>Won't this be embarrassing in public?</h3>
+                    <p>The decline looks like any normal card decline (insufficient funds, etc.). You get a discreet phone notification. Nobody knows it's because of budget rules. Most approvals happen in 10 seconds, so you can retry immediately at the same shop. No awkwardness, no explanation needed.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What if I just game the AI with the right words?</h3>
+                    <p>We track patterns. If your justifications always use similar language and always get approved, it triggers human review. But honestly, if you're taking the time to write a thoughtful justification, you're already pausing to think—which is the point. Even "gaming" the system creates the friction that prevents true impulse spending.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can my partner/spouse see my spending?</h3>
+                    <p>No. This is your personal accountability partner, not shared monitoring. Only you see your justifications and decisions. If you want to share access, you can, but it's not default. Your spending is private.</p>
+                </div>
+
+                <div class="faq-item">
                     <h3>Is this like parental control, but for adults?</h3>
                     <p>Not quite. Parental control cards require someone else to approve your purchases. With Impulse Card, <em>you</em> set the rules and <em>you</em> approve your own purchases. It's a financial accountability partner, not a parent. You stay in control—we just make you pause first.</p>
                 </div>
@@ -392,18 +459,13 @@
                 </div>
 
                 <div class="faq-item">
-                    <h3>Will my card get declined in front of people? That's embarrassing.</h3>
-                    <p>The decline looks like any normal decline (insufficient funds, etc.). You get a discreet phone notification. Open app, type your reason, get approval in ~10 seconds, retry payment. Nobody knows the real reason.</p>
-                </div>
-
-                <div class="faq-item">
                     <h3>What if I just use my other bank card instead?</h3>
                     <p>Then this won't work. You need to make Impulse Card your primary card. In our research, 73% said they'd do exactly that because they're desperate for external accountability. This is for people who are tired of relying on willpower that never shows up.</p>
                 </div>
 
                 <div class="faq-item">
                     <h3>How much does it cost?</h3>
-                    <p><strong>£12/month</strong> after a 1-month free trial. Our research shows people with ADHD lose £50-200/month to impulse spending. If this saves you just £50/month, it pays for itself 4x over.</p>
+                    <p><strong>£15/month</strong> after a 1-month free trial. Our research shows people with ADHD lose £50-200/month to impulse spending. If this saves you just £50/month, it pays for itself 3x over.</p>
                 </div>
 
                 <div class="faq-item">

@@ -10,12 +10,13 @@ html {
 }
 
 :root {
-    /* Light Mode - Unique Bold Color Palette */
-    --primary-electric: #00F0FF;
-    --primary-deep-teal: #006B7D;
-    --primary-neon-green: #39FF14;
+    /* Light Mode - Warm ADHD-Friendly Color Palette */
+    --primary-electric: #A855F7;
+    --primary-deep-teal: #7C3AED;
+    --primary-neon-green: #F59E0B;
     --accent-coral: #FF6B6B;
     --accent-violet: #A855F7;
+    --accent-orange: #F97316;
     --dark: #0A0E1A;
     --dark-secondary: #1A1F2E;
     --dark-tertiary: #2A2F3E;
@@ -27,21 +28,22 @@ html {
     --text-primary: #0A0E1A;
     --text-secondary: #64748B;
     --card-bg: #FFFFFF;
-    --card-border: rgba(0, 107, 125, 0.15);
+    --card-border: rgba(124, 58, 237, 0.15);
 
-    /* Unique Gradients - Bold & Distinctive */
-    --gradient-primary: linear-gradient(135deg, #006B7D 0%, #00F0FF 50%, #39FF14 100%);
-    --gradient-accent: linear-gradient(135deg, #FF6B6B 0%, #A855F7 100%);
+    /* Unique Gradients - Warm & Energetic */
+    --gradient-primary: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #F59E0B 100%);
+    --gradient-accent: linear-gradient(135deg, #FF6B6B 0%, #F97316 100%);
     --gradient-hero: linear-gradient(165deg, #0A0E1A 0%, #0F1421 50%, #0A0E1A 100%);
 }
 
 [data-theme="dark"] {
-    /* Dark Mode - High Contrast Bold Colors */
-    --primary-electric: #00F0FF;
-    --primary-deep-teal: #00B8D4;
-    --primary-neon-green: #39FF14;
+    /* Dark Mode - Warm High Contrast Colors */
+    --primary-electric: #C084FC;
+    --primary-deep-teal: #A855F7;
+    --primary-neon-green: #FBBF24;
     --accent-coral: #FF8585;
     --accent-violet: #C084FC;
+    --accent-orange: #FB923C;
     --dark: #FAFAFA;
     --dark-secondary: #E5E7EB;
     --dark-tertiary: #D1D5DB;
@@ -53,11 +55,11 @@ html {
     --text-primary: #FAFAFA;
     --text-secondary: #9CA3AF;
     --card-bg: #1A1F2E;
-    --card-border: rgba(0, 240, 255, 0.2);
+    --card-border: rgba(168, 85, 247, 0.3);
 
-    /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, #00B8D4 0%, #00F0FF 50%, #39FF14 100%);
-    --gradient-accent: linear-gradient(135deg, #FF8585 0%, #C084FC 100%);
+    /* Dark mode gradients - Warm */
+    --gradient-primary: linear-gradient(135deg, #A855F7 0%, #C084FC 50%, #FBBF24 100%);
+    --gradient-accent: linear-gradient(135deg, #FF8585 0%, #FB923C 100%);
     --gradient-hero: linear-gradient(165deg, #0A0E1A 0%, #0E1219 50%, #0A0E1A 100%);
 }
 
@@ -444,26 +446,25 @@ header nav {
 
 .notification-card {
     background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(255, 107, 107, 0.3);
+    border: 2px solid rgba(251, 191, 36, 0.4);
     border-radius: 20px;
     padding: 32px 24px;
     text-align: center;
     backdrop-filter: blur(10px);
-    box-shadow: 0 10px 40px rgba(255, 107, 107, 0.2);
+    box-shadow: 0 10px 40px rgba(251, 191, 36, 0.25);
 }
 
 .notification-icon {
     font-size: 48px;
     margin-bottom: 16px;
-    filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.5));
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.5));
 }
 
 .notification-title {
     font-size: 20px;
     font-weight: 700;
-    color: #FF6B6B;
+    color: #FBBF24;
     margin-bottom: 20px;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
@@ -690,6 +691,138 @@ section:nth-child(even) {
 .step p {
     color: var(--text-secondary);
     line-height: 1.7;
+}
+
+/* ===== PRICING SECTION ===== */
+.pricing-section {
+    background: var(--bg-primary);
+}
+
+.pricing-section h2 {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.pricing-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 56px;
+    border: 3px solid transparent;
+    background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+                var(--gradient-primary) border-box;
+    box-shadow: 0 20px 60px rgba(0, 240, 255, 0.3);
+    transition: all 0.4s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 80px rgba(0, 240, 255, 0.4);
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid var(--card-border);
+}
+
+.price-amount {
+    font-size: 72px;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 16px;
+}
+
+.price-period {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.price-description {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.pricing-value h3 {
+    text-align: center;
+    margin-bottom: 32px;
+    color: var(--text-primary);
+}
+
+.value-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.value-item {
+    text-align: center;
+    padding: 24px;
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    flex: 1;
+    min-width: 200px;
+    border: 2px solid var(--card-border);
+}
+
+.value-item.highlight {
+    border: 2px solid var(--primary-electric);
+    box-shadow: 0 8px 24px rgba(0, 240, 255, 0.2);
+}
+
+.value-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.value-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.value-vs {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gray);
+}
+
+.roi-callout {
+    text-align: center;
+    padding: 32px;
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    border: 2px solid var(--card-border);
+}
+
+.roi-callout strong {
+    font-size: 28px;
+    color: var(--text-primary);
+}
+
+.roi-text {
+    font-size: 18px;
+    color: var(--text-secondary);
+}
+
+.roi-text strong {
+    font-size: 24px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* ===== TRUST & VALUE SECTION ===== */
@@ -1197,6 +1330,12 @@ section:nth-child(even) {
     font-size: 16px;
     border: 2px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 4px 16px rgba(236, 72, 153, 0.3);
+}
+
+.waitlist .subtle-urgency {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
 }
 
 .waitlist-form {
