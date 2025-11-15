@@ -1,53 +1,5 @@
 // Impulse Card Landing Page - Main JavaScript
 
-// ===== DARK MODE TOGGLE =====
-const themeToggle = document.getElementById('theme-toggle');
-const themeIcon = document.querySelector('.theme-toggle-icon');
-const htmlElement = document.documentElement;
-
-// Check for saved theme preference or default to system preference
-const getPreferredTheme = () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        return savedTheme;
-    }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-};
-
-// Apply theme
-const applyTheme = (theme) => {
-    htmlElement.setAttribute('data-theme', theme);
-    themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-    localStorage.setItem('theme', theme);
-};
-
-// Initialize theme on page load
-applyTheme(getPreferredTheme());
-
-// Toggle theme
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        applyTheme(newTheme);
-
-        // Track theme toggle with Google Analytics (if configured)
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'theme_toggle', {
-                'event_category': 'UI',
-                'event_label': newTheme
-            });
-        }
-    });
-}
-
-// Listen for system theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) {
-        applyTheme(e.matches ? 'dark' : 'light');
-    }
-});
-
 // ===== SMOOTH SCROLLING =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

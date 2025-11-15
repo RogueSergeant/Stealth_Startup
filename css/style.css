@@ -10,33 +10,6 @@ html {
 }
 
 :root {
-    /* Light Mode - Warm ADHD-Friendly Color Palette */
-    --primary-electric: #A855F7;
-    --primary-deep-teal: #7C3AED;
-    --primary-neon-green: #F59E0B;
-    --accent-coral: #FF6B6B;
-    --accent-violet: #A855F7;
-    --accent-orange: #F97316;
-    --dark: #0A0E1A;
-    --dark-secondary: #1A1F2E;
-    --dark-tertiary: #2A2F3E;
-    --gray: #64748B;
-    --light-gray: #F1F5F9;
-    --white: #FFFFFF;
-    --bg-primary: #FFFFFF;
-    --bg-secondary: #F8FAFC;
-    --text-primary: #0A0E1A;
-    --text-secondary: #64748B;
-    --card-bg: #FFFFFF;
-    --card-border: rgba(124, 58, 237, 0.15);
-
-    /* Unique Gradients - Warm & Energetic */
-    --gradient-primary: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #F59E0B 100%);
-    --gradient-accent: linear-gradient(135deg, #FF6B6B 0%, #F97316 100%);
-    --gradient-hero: linear-gradient(165deg, #0A0E1A 0%, #0F1421 50%, #0A0E1A 100%);
-}
-
-[data-theme="dark"] {
     /* Dark Mode - Warm High Contrast Colors */
     --primary-electric: #C084FC;
     --primary-deep-teal: #A855F7;
@@ -274,35 +247,6 @@ header nav {
 
 .nav-link:hover::after {
     width: 100%;
-}
-
-/* Dark Mode Toggle */
-.theme-toggle {
-    background: var(--card-bg);
-    border: 2px solid var(--card-border);
-    border-radius: 50px;
-    padding: 8px 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 20px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 107, 125, 0.1);
-}
-
-.theme-toggle:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 240, 255, 0.3);
-    border-color: var(--primary-electric);
-}
-
-.theme-toggle-icon {
-    transition: transform 0.5s ease;
-}
-
-.theme-toggle:hover .theme-toggle-icon {
-    transform: rotate(20deg);
 }
 
 /* ===== HERO SECTION ===== */
