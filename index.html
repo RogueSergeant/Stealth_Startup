@@ -9,7 +9,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Impulse Card - Stop Overspending Before It Happens">
     <meta property="og:description" content="AI-powered spending control that blocks impulse purchases before they happen. Join 2,000+ on the waitlist.">
-    <meta property="og:image" content="https://impulsecard.co.uk/images/social-share.jpg">
+    <meta property="og:image" content="https://impulsecard.co.uk/images/social-share.svg">
     <meta property="og:url" content="https://impulsecard.co.uk">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -51,7 +51,7 @@
     <section class="hero">
         <div class="container">
             <h1>Stop Overspending Before It Happens</h1>
-            <p class="subheadline">Your card blocks overspending. You justify the purchase. AI decides in 10 seconds. For anyone who struggles with impulse control.</p>
+            <p class="subheadline">An AI-powered card that makes you pause before impulse purchases. Justify why you need it. Get approved, delayed, or gently declined—all in 10 seconds.</p>
 
             <!-- Phone Mockup -->
             <div class="phone-mockup">
@@ -68,14 +68,14 @@
                             <div class="notification-merchant">Amazon.co.uk</div>
                             <div class="notification-amount">£127.99</div>
                             <div class="notification-message">This exceeds your discretionary budget.<br>Want to explain why you need this?</div>
-                            <button class="justify-button">Tell me why I need this</button>
+                            <button class="justify-button">Tell me why you need this</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <a href="#waitlist" class="cta-button-large">Join 847 People on the Waitlist</a>
-            <p class="trust-signal">✓ Created by a software engineer who lost £1,600 last year to impulse purchases</p>
+            <p class="trust-signal">✓ Created by a software engineer who lost over £5,000 last year to impulse purchases</p>
         </div>
     </section>
 
@@ -107,7 +107,7 @@ Thursday: it arrives. You open it once. It's in your cupboard now. £127 in a cu
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                         </svg>
                     </div>
-                    <h3>The Weekend Blackout</h3>
+                    <h3>The Mid-week Blackout</h3>
                     <p>Friday night: new hobby idea. Mechanical keyboards. "This is it. This is the thing."
 
 Order £89 keycaps. £140 switches. £200 custom case.
@@ -123,16 +123,16 @@ The keyboard parts are still in boxes. Unopened. You've moved on to fountain pen
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                         </svg>
                     </div>
-                    <h3>The Productivity Trap</h3>
-                    <p>"This Notion template will fix my life." £45.
+                    <h3>The Friday Night Fever</h3>
+                    <p>"I'll buy everyone drinks, don't even worry about it." £100, gone.
 
-"This productivity course will make me organized." £140.
+"Yes, don't worry, your money isn't good here." Another £140.
 
-"These 12 Kindle books..." £67. You read three pages of one.
+"Ah, don't sweat it, I've got this drink" £30. You did this three times tonight.
 
-Next week, you see an ad for a different system. "Maybe this one will work."
+Next week, you repeat the same old habits. "Just one more drink guys."
 
-You forgot you bought the last one. Again.</p>
+You end up being owed 13 drinks that are never paid back.</p>
                 </div>
             </div>
 
@@ -372,7 +372,13 @@ You forgot you bought the last one. Again.</p>
             <h2>Join the Waitlist</h2>
             <p class="section-subheadline">Get early access + 2 months free when we launch. <span class="subtle-urgency">Early access for first 1,000 signups</span> (847 spots taken)</p>
 
-            <form id="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="waitlist-form">
+            <div id="form-container">
+            <form id="waitlist-form" action="https://formspree.io/f/mvgdazqk" method="POST" class="waitlist-form">
+                <!-- Honeypot field for spam protection (hidden from real users, bots will fill it) -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+                </div>
+
                 <div class="form-group">
                     <label for="email">Email address *</label>
                     <input type="email" id="email" name="email" placeholder="you@example.com" required>
@@ -383,9 +389,24 @@ You forgot you bought the last one. Again.</p>
                     <input type="text" id="name" name="name" placeholder="What should we call you?">
                 </div>
 
-                <button type="submit" class="cta-button-large">Get Early Access</button>
+                <div class="form-group">
+                    <label for="referral_source">How did you hear about us? (optional)</label>
+                    <select id="referral_source" name="referral_source">
+                        <option value="">Select...</option>
+                        <option value="twitter">Twitter</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="friend">Friend / Word of mouth</option>
+                        <option value="reddit">Reddit</option>
+                        <option value="search">Search engine</option>
+                        <option value="adhd_community">ADHD community/forum</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
 
-                <p class="privacy-note">📧 One email when we launch. No spam. Unsubscribe anytime.</p>
+                <div class="form-group" id="referral_other_container" style="display: none;">
+                    <label for="referral_other">Please specify:</label>
+                    <input type="text" id="referral_other" name="referral_other" placeholder="Where did you hear about us?">
+                </div>
 
                 <details class="additional-info">
                     <summary>Want to help shape the product? (Optional)</summary>
@@ -416,6 +437,17 @@ You forgot you bought the last one. Again.</p>
                         </div>
                     </div>
                 </details>
+
+                <div class="form-group checkbox-group consent-checkbox">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="marketing_consent" value="yes" required>
+                        <span>I agree to receive product updates and launch notifications via email *</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="cta-button-large">Get Early Access</button>
+
+                <p class="privacy-note">📧 One email when we launch. No spam. Unsubscribe anytime. We'll never sell your data.</p>
             </form>
 
             <div id="thank-you" class="thank-you" style="display: none;">
@@ -429,6 +461,7 @@ You forgot you bought the last one. Again.</p>
                 <p>Check your inbox in the next few minutes for a confirmation email.</p>
                 <p class="interview-note" style="display: none;">We'll be in touch soon about scheduling a chat. You'll get a £10 Amazon voucher as thanks!</p>
                 <p class="signature">— Alfie Roberts</p>
+            </div>
             </div>
         </div>
     </section>
@@ -476,7 +509,7 @@ You forgot you bought the last one. Again.</p>
 
                 <div class="faq-item">
                     <h3>When will this launch?</h3>
-                    <p>Pilot program in Q3 2025 (100 beta users). Public launch Q4 2025. Waitlist gets priority access + 2 months free.</p>
+                    <p>Pilot program in Q1 2026 (100 beta users). Public launch Q2 2026. Waitlist gets priority access + 2 months free.</p>
                 </div>
 
                 <div class="faq-item">
