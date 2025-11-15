@@ -209,7 +209,7 @@ if (emailInput) {
 // ===== SOCIAL SHARE FUNCTIONS (OPTIONAL) =====
 // Add these if you want to add share buttons later
 function shareOnTwitter() {
-    const text = "I just joined the waitlist for Impulse Card - an AI-powered spending control card for ADHD adults. Check it out!";
+    const text = "I just joined the waitlist for Impulse Card - an AI-powered card that blocks impulse purchases before they happen. Check it out!";
     const url = window.location.href;
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
 }
@@ -258,5 +258,5 @@ if ('IntersectionObserver' in window) {
 
 // ===== CONSOLE MESSAGE =====
 console.log('%cImpulse Card', 'font-size: 24px; font-weight: bold; color: #0066CC;');
-console.log('%cBuilt for ADHD brains 💙', 'font-size: 14px; color: #666;');
-console.log('Interested in the code? We\'re hiring! Email: sam@impulsecard.co.uk');
+console.log('%cStop overspending before it happens 💙', 'font-size: 14px; color: #666;');
+console.log('Interested in the code? Email: alfie@impulsecard.co.uk');
