@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impulse Card - AI-Powered Intentional Spending (Pre-Launch)</title>
+    <meta name="description" content="An AI-powered prepaid card that helps you make intentional spending decisions. Join founding members co-creating the product. Pre-launch by Alfie Roberts.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Impulse Card - Make Better Spending Decisions">
+    <meta property="og:description" content="Join founding members building an AI-powered spending decision partner. Pre-launch community shaping the product together.">
+    <meta property="og:url" content="https://impulsecard.co.uk">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Analytics - Plausible -->
+    <script defer data-domain="impulsecard.co.uk" src="https://plausible.io/js/script.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Skip to content -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">💳 Impulse Card</div>
+                <nav>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#waitlist" class="btn btn-primary btn-small">Join Founding Members</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Make Better Spending Decisions</h1>
+                    <p class="hero-subheadline">An AI-powered card that creates a 30-second pause before discretionary purchases. Reflect on what you need. Spend intentionally, not impulsively.</p>
+
+                    <!-- Interactive Phone Mockup -->
+                    <div class="phone-mockup-wrapper">
+                        <div class="phone-mockup" id="phoneMockup">
+                            <div class="phone-frame">
+                                <div class="phone-notch"></div>
+                                <div class="phone-screen">
+                                    <!-- Initial State: Notification -->
+                                    <div class="notification-view" id="notificationView">
+                                        <div class="notification-card">
+                                            <div class="notification-icon">🤔</div>
+                                            <div class="notification-title">Worth thinking about...</div>
+                                            <div class="notification-merchant">Amazon.co.uk</div>
+                                            <div class="notification-amount">£127.99</div>
+                                            <div class="notification-message">This exceeds your discretionary budget. Take a moment to consider if you need this right now.</div>
+                                            <button class="btn btn-primary" id="startDemoBtn">Tell me why you need this</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Chat State -->
+                                    <div class="chat-view" id="chatView" style="display: none;">
+                                        <div class="chat-header">
+                                            <button class="back-button" id="backButton" aria-label="Go back">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                                                </svg>
+                                            </button>
+                                            <div class="chat-header-content">
+                                                <div class="chat-title">Consider Your Purchase</div>
+                                                <div class="chat-amount">£127.99</div>
+                                            </div>
+                                        </div>
+                                        <div class="chat-messages" id="chatMessages">
+                                            <!-- Messages will be added here dynamically -->
+                                        </div>
+                                        <div class="chat-input-wrapper">
+                                            <input type="text" class="chat-input" id="chatInput" placeholder="Type your response..." readonly>
+                                            <button class="send-button" id="sendButton" aria-label="Send message">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#waitlist" class="btn btn-primary btn-large">Join the Founding Members</a>
+                    </div>
+
+                    <div class="trust-signal">
+                        <svg class="trust-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                        </svg>
+                        Built by Alfie Roberts, a software engineer with ADHD who's on a mission to spend £1,600 less on regret purchases in 2025
+                    </div>
+                </div>
+            </div>
+            <div class="hero-background-accent"></div>
+        </section>
+
+        <!-- Value Proposition Section -->
+        <section id="value-proposition" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Financial Wellbeing, Not Restriction</h2>
+                    <p class="section-subheading">We don't stop you from spending. We help you spend intentionally.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="value-card">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="6"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                        </div>
+                        <h3>Spend On What Matters</h3>
+                        <p>Your money should go toward things that genuinely improve your life. A 30-second pause helps you decide if this purchase aligns with your goals.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3>Built for ADHD Brains</h3>
+                        <p>Traditional budgeting requires constant vigilance. We provide external structure exactly when you need it – in the moment of purchase.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                            </svg>
+                        </div>
+                        <h3>You Stay In Charge</h3>
+                        <p>Set your own rules. Choose which purchases require reflection. Override when needed. This is your tool, not a parent.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section id="problem" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>If This Sounds Familiar, You're Not Alone</h2>
+                    <p class="section-subheading">88% of UK adults make impulse purchases. For people with ADHD, it's nearly universal.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="problem-card">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                            </svg>
+                        </div>
+                        <h3>The Late-Night Purchase</h3>
+                        <p>2:47am. Can't sleep. Scrolling Amazon. 'This drone will definitely make me happy.' One click. £127 gone. Morning: 'Oh. That drone.' It arrives Thursday. You open it once. £127 sitting in your cupboard.</p>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                            </svg>
+                        </div>
+                        <h3>The Hobby Cycle</h3>
+                        <p>New hobby idea. Mechanical keyboards. 'This is it. This is the thing.' Order £89 keycaps. £140 switches. £200 custom case. Total: £680. Monday: banking app notification. The parts are still in boxes. You've moved on to fountain pens.</p>
+                    </div>
+
+                    <div class="problem-card">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                            </svg>
+                        </div>
+                        <h3>The Generous Night Out</h3>
+                        <p>'I'll buy everyone drinks!' £100, gone. 'Don't worry, I've got this round.' Another £140. Three rounds later: £370 spent. Next morning: regret. You were just feeling good and generous in the moment.</p>
+                    </div>
+                </div>
+
+                <div class="problem-closing">
+                    <p>Banks show you <em>AFTER</em> you overspend. Impulse Card pauses you <strong class="highlight">BEFORE</strong> the purchase completes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                    <p class="section-subheading">Not a budget tracker. A spending decision partner.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <h3>Set Your Intentions Once</h3>
+                        <p>Choose which purchases require reflection. 'Pause me for anything over £40. Never question groceries or bills. Ask me about Amazon after 10pm.'</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3>Card Pauses Automatically</h3>
+                        <p>Try to buy that £89 keyboard at 11pm? Purchase pauses. You get a notification: 'Worth thinking about...' Open the app to reflect on whether you need this.</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                        </div>
+                        <h3>AI Supports Your Decision</h3>
+                        <p>Share your thinking. AI asks reflective questions, considers your budget and goals, then supports your final decision – whether that's proceed now, wait 7 days, or skip it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder Story Section -->
+        <section id="founder-story" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why I'm Building This</h2>
+                </div>
+
+                <div class="founder-card">
+                    <div class="founder-profile">
+                        <div class="founder-avatar">AR</div>
+                        <div class="founder-info">
+                            <div class="founder-name">Alfie Roberts</div>
+                            <div class="founder-role">Software Engineer • MSc Applied AI</div>
+                        </div>
+                    </div>
+
+                    <div class="founder-story-content">
+                        <p>Last year, I spent £1,623 on things I regretted within 24 hours.</p>
+
+                        <p>£89 for a mechanical keyboard I used twice. Three Kindle books I never read. A £140 'productivity course' I never started. Hobby after hobby, each one 'definitely the thing this time.'</p>
+
+                        <p>I have ADHD. In the moment, my brain genuinely believes every purchase is essential. By the time clarity returns, the money's gone.</p>
+
+                        <p>I tried everything: Monzo pots, YNAB budgets, hiding cards, deleting apps. None worked because they all relied on me remembering to check them BEFORE buying. But when I see something I want, I forget those tools exist.</p>
+
+                        <p>I needed something that didn't depend on my memory or willpower. Something that would create a mandatory pause and make me explain my thinking before completing the purchase.</p>
+
+                        <p>So I'm building the tool I needed. Not to stop spending – to spend better.</p>
+
+                        <p>I'm sharing this work-in-progress because I suspect I'm not alone. If you've felt that same frustration – knowing you want to spend intentionally but struggling in the moment – this is for you too.</p>
+                    </div>
+
+                    <div class="founder-contact">
+                        <a href="mailto:alfie@impulsecard.co.uk" class="contact-link">alfie@impulsecard.co.uk</a>
+                        <p class="contact-text">Want to help shape this? Join the founding members below.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section id="comparison" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why Not Just Use Monzo or Revolut?</h2>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="comparison-column">
+                        <h3 class="comparison-header">Reactive Tracking</h3>
+                        <ul class="comparison-list">
+                            <li class="comparison-item negative">
+                                <svg class="comparison-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                                Show damage AFTER you've spent
+                            </li>
+                            <li class="comparison-item negative">
+                                <svg class="comparison-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                                Require you to remember to check budget
+                            </li>
+                            <li class="comparison-item negative">
+                                <svg class="comparison-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                                Rely on willpower and self-control
+                            </li>
+                            <li class="comparison-item negative">
+                                <svg class="comparison-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                                Hope you remember before buying
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="comparison-column comparison-highlight">
+                        <h3 class="comparison-header highlight">Proactive Support</h3>
+                        <ul class="comparison-list">
+                            <li class="comparison-item positive">
+                                <svg class="comparison-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Pause BEFORE transaction completes
+                            </li>
+                            <li class="comparison-item positive">
+                                <svg class="comparison-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Create mandatory reflection moment
+                            </li>
+                            <li class="comparison-item positive">
+                                <svg class="comparison-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Provide external decision structure
+                            </li>
+                            <li class="comparison-item positive">
+                                <svg class="comparison-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 13l4 4L19 7"/>
+                                </svg>
+                                Built for real life when willpower fails
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who This Is For Section -->
+        <section id="who-for" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Who This Is For</h2>
+                    <p class="section-subheading">This tool is for you if you've ever:</p>
+                </div>
+
+                <div class="experience-card">
+                    <ul class="experience-list">
+                        <li>Bought something expensive impulsively and regretted it the next day</li>
+                        <li>Checked your budget, then forgot about it 5 minutes later when you saw something you wanted</li>
+                        <li>Felt the excitement fade before the package even arrived</li>
+                        <li>Tried "just being more careful" but it never sticks</li>
+                        <li>Spent money you didn't have, assuming future-you would "figure it out"</li>
+                        <li>Knew you should wait, but clicked purchase anyway</li>
+                    </ul>
+
+                    <div class="experience-secondary">
+                        <h3>Especially helpful if you:</h3>
+                        <ul class="experience-list secondary">
+                            <li>Have ADHD or struggle with executive function</li>
+                            <li>Shop late at night when you're tired or emotional</li>
+                            <li>Find yourself stuck in "hobby cycling" – buying everything for new interests, then moving on</li>
+                            <li>Know budgeting apps don't work because you need external accountability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founding Member Benefits Section -->
+        <section id="benefits" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Join the Founding Members</h2>
+                    <p class="section-subheading">You're not joining a finished product. You're joining the conversation.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="benefit-card">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3>Your Input Matters</h3>
+                        <p>Founding members directly influence what gets built. This isn't a focus group – it's co-creation. Your challenges become our priorities.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                            </svg>
+                        </div>
+                        <h3>Lock In Founding Rate</h3>
+                        <p>When we launch, founding members get the best pricing we'll ever offer, plus 2 months free. Your reward for believing early.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3>First Access</h3>
+                        <p>Q1 2026: 100-person pilot. Founding members get first access. Help us test, break things, make it better.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Transparent Pricing</h2>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="price-amount">£15<span class="price-period">/month</span></div>
+                    <div class="price-subtitle">Founding members get best rate + 2 months free</div>
+                    <div class="price-note">Final pricing determined with pilot users</div>
+
+                    <div class="value-framework">
+                        <h3>The Economics That Matter</h3>
+                        <p class="value-statement">If this helps you skip one £60 impulse purchase every 4 months... <br><strong>...it pays for itself.</strong></p>
+                        <p>For most people struggling with impulse spending, that's realistic in month one.</p>
+                        <p>This requires commitment. You'll need to use this as your primary payment method. It won't work if you bypass it with your regular card.</p>
+                        <p>But if you're looking for genuine external accountability – not just tracking – this is designed for that level of commitment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Questions You Might Have</h2>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Does this actually exist yet?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. This is pre-launch. I'm validating demand before building. If enough people want this, I'll build it. If 10 people sign up, I'll know this isn't the solution people need.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Won't this be embarrassing in public?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>The decline looks exactly like any other card decline. Your notification is discreet. The reflection takes 10 seconds in the app. No one watching knows what's happening.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What if I just game the AI with the right words?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You might. But here's the thing: even if you learn to write justifications that work, you're still pausing. You're still reflecting. That pause alone often breaks the impulse. If you're deliberately gaming it, you probably didn't need the card in the first place.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is this like parental control for adults?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. You set the rules. You approve your own purchases. The AI isn't a parent – it's a reflection partner holding you to YOUR standards. Big difference.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What if I need to make an emergency purchase?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>There'll be instant override in the app. You can permanently approve specific merchants. Or use "urgent – review later" that approves immediately but flags for reflection afterwards.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What if I just use my other bank card instead?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You probably will sometimes. This only works if you commit to using it as your primary card. It's not for casual use. It's for people who want genuine external accountability.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How much will this actually cost?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Starting at £15/month for founding members, but final pricing determined with pilot users. You'll get the best rate I'll ever offer, plus 2 months free.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>When will this launch?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Pilot Q1 2026 (100 users). Public launch Q2 2026. Those dates might slip. I'm building this properly, not rushing it.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is my data actually safe?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. Encrypted, never sold, GDPR compliant from day one. You can delete everything with one click. Want to see what data I have? Just ask.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What if this doesn't work for me?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Then you cancel. Free trial period. No long-term contract. If it doesn't help you, I don't want your money.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Isn't this just making me spend less?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No – it's helping you spend BETTER. You'll still spend money. You'll just spend it on things you actually want after reflection, not things you regret 24 hours later. The goal isn't less spending – it's intentional spending.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Why should I trust you to build this?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Fair question. I'm a software engineer with ADHD building this to solve my own problem. MSc in Applied AI from Westminster. But honestly? You shouldn't trust me yet. Sign up if you're curious. Actually trust me once you see what I build.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust & Transparency Section -->
+        <section id="trust" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What You Should Know</h2>
+                </div>
+
+                <div class="grid-2">
+                    <div class="trust-card">
+                        <h3>Pre-Launch Reality</h3>
+                        <p>This product doesn't exist yet. I'm one person building in the open. Your signup helps me understand if this is worth building. If 50 people sign up, that's validation. If 500 sign up, that's a mandate.</p>
+                    </div>
+
+                    <div class="trust-card">
+                        <h3>Your Data Is Respected</h3>
+                        <p>I'm building with the privacy standards I expect. Your email is stored securely. Never sold. One email when we launch. Unsubscribe anytime. If you do an interview, your words stay anonymous unless you give permission.</p>
+                    </div>
+
+                    <div class="trust-card">
+                        <h3>Honest Timeline</h3>
+                        <p>Pilot: Q1 2026 (100 users)<br>Public launch: Q2 2026<br><br>These dates might slip. Building properly matters more than shipping fast.</p>
+                    </div>
+
+                    <div class="trust-card">
+                        <h3>You Can Change Your Mind</h3>
+                        <p>Changed your mind? Delete your data anytime with one click. Want to see what I have? Just ask. This is your information, not mine.</p>
+                    </div>
+                </div>
+
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                        <span>Security by design</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                        <span>GDPR compliant</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                        <span>Data never sold</span>
+                    </div>
+                    <div class="trust-badge">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                        </svg>
+                        <span>Delete anytime</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Waitlist Form Section -->
+        <section id="waitlist" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Join the Founding Members</h2>
+                    <p class="section-subheading">Help shape what this becomes. Get priority access when we launch.</p>
+                </div>
+
+                <div class="waitlist-form-wrapper">
+                    <form id="waitlistForm" class="waitlist-form" action="https://formspree.io/f/mvgdazqk" method="POST">
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="subscribe" required>
+                                <span>I want to hear when this launches*</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="What should I call you?">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="howFound">How did you find us?</label>
+                            <select id="howFound" name="howFound">
+                                <option value="">Select an option</option>
+                                <option value="twitter">Twitter</option>
+                                <option value="linkedin">LinkedIn</option>
+                                <option value="friend">Friend/Word of mouth</option>
+                                <option value="reddit">Reddit</option>
+                                <option value="search">Search engine</option>
+                                <option value="adhd-community">ADHD community/forum</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" id="otherSourceGroup" style="display: none;">
+                            <label for="otherSource">Please specify:</label>
+                            <input type="text" id="otherSource" name="otherSource" placeholder="How did you find us?">
+                        </div>
+
+                        <div class="expandable-section">
+                            <button type="button" class="expand-button" id="expandOptional" aria-expanded="false">
+                                <span>Want to help more? (Optional)</span>
+                                <svg class="expand-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+
+                            <div class="expandable-content" id="optionalFields" style="display: none;">
+                                <div class="form-group">
+                                    <label for="challenge">What's your biggest spending challenge?</label>
+                                    <textarea id="challenge" name="challenge" maxlength="200" placeholder="Optional: helps with product development" rows="3"></textarea>
+                                    <div class="char-count"><span id="charCount">0</span>/200</div>
+                                </div>
+
+                                <div class="form-group checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="hasADHD" value="yes">
+                                        <span>I have ADHD (diagnosed or self-identified)</span>
+                                    </label>
+                                </div>
+
+                                <div class="form-group checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="interviewVolunteer" value="yes">
+                                        <span>I'm happy to do a 20-min interview (£10 Amazon voucher)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large btn-full">Join Founding Members</button>
+
+                        <div class="privacy-note">
+                            📧 One email when we launch. No spam. Unsubscribe anytime. Your data never gets sold.
+                        </div>
+                    </form>
+
+                    <div id="thankYouMessage" class="thank-you-message" style="display: none;">
+                        <div class="thank-you-icon">🎉</div>
+                        <h3>Welcome to the Founding Members</h3>
+                        <p>Thanks for joining! You'll hear from me when:</p>
+                        <ul>
+                            <li>Pilot programme opens (Q1 2026)</li>
+                            <li>I need feedback on early designs</li>
+                            <li>Major updates happen</li>
+                        </ul>
+                        <p>Check your inbox in the next few minutes for confirmation.</p>
+                        <p id="interviewNote" style="display: none;">I'll email within the week to schedule a chat.</p>
+                        <p class="signature">— Alfie</p>
+                        <p class="ps">P.S. Reply to any email. They all come straight to me.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="waitlist-background-accent"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">💳 Impulse Card</div>
+                    <div class="footer-tagline">Spend better, not less</div>
+                </div>
+                <div class="footer-right">
+                    <a href="mailto:alfie@impulsecard.co.uk" class="footer-email">alfie@impulsecard.co.uk</a>
+                    <p class="footer-text">Reply to any email – they all come straight to me</p>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <p>© 2025 Impulse Card. Built by Alfie Roberts.</p>
+                <p>Privacy Policy and Terms published before launch</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
