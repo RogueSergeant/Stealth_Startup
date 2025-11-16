@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impulse Card - AI-Powered Spending Control for ADHD</title>
-    <meta name="description" content="The first prepaid card that stops impulse spending before it happens. Built for adults with ADHD who want financial control without the guilt.">
+    <title>Impulse Card</title>
     
     <style>
         * {
@@ -13,364 +12,50 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1e40af;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f9fafb;
-            --border: #e5e7eb;
-        }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #ffffff;
+            color: #1f2937;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .beta-badge {
-            display: inline-block;
-            background: var(--bg-light);
-            color: var(--text-light);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-            margin-left: 12px;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 80px 0;
             text-align: center;
+            padding: 40px;
+            max-width: 500px;
         }
 
         h1 {
             font-size: 48px;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            color: var(--text-dark);
-        }
-
-        .subtitle {
-            font-size: 20px;
-            color: var(--text-light);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            transition: background 0.2s;
-        }
-
-        .cta-button:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Problem Section */
-        .problem-section {
-            background: var(--bg-light);
-            padding: 60px 0;
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .problem-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        .problem-card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-        }
-
-        .problem-card p {
-            color: var(--text-light);
-            font-size: 16px;
-        }
-
-        /* Solution Section */
-        .solution-section {
-            padding: 80px 0;
-        }
-
-        .solution-section h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .solution-description {
-            text-align: center;
-            font-size: 18px;
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto 60px;
-        }
-
-        .feature-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .feature {
-            text-align: left;
-        }
-
-        .feature-number {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 32px;
             font-weight: 700;
-            margin-bottom: 16px;
-        }
-
-        .feature h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        .feature p {
-            color: var(--text-light);
-        }
-
-        /* Waitlist Section */
-        .waitlist-section {
-            background: var(--primary);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .waitlist-section h2 {
-            font-size: 36px;
             margin-bottom: 20px;
+            color: #2563eb;
         }
 
-        .waitlist-section p {
+        p {
             font-size: 18px;
-            margin-bottom: 40px;
-            opacity: 0.9;
+            color: #6b7280;
+            line-height: 1.6;
         }
 
-        .waitlist-form {
-            max-width: 500px;
-            margin: 0 auto;
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .waitlist-input {
-            flex: 1;
-            min-width: 250px;
-            padding: 16px;
-            border-radius: 8px;
-            border: none;
-            font-size: 16px;
-        }
-
-        .waitlist-button {
-            background: var(--text-dark);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 8px;
-            border: none;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-
-        .waitlist-button:hover {
-            opacity: 0.9;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            color: var(--text-light);
-        }
-
-        /* Responsive */
         @media (max-width: 768px) {
             h1 {
                 font-size: 36px;
             }
-
-            .subtitle {
-                font-size: 18px;
-            }
-
-            .hero {
-                padding: 40px 0;
-            }
-
-            .solution-section h2,
-            .waitlist-section h2 {
-                font-size: 28px;
-            }
-
-            .waitlist-form {
-                flex-direction: column;
-            }
-
-            .waitlist-input {
-                min-width: 100%;
+            
+            p {
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div>
-                    <span class="logo">Impulse Card</span>
-                    <span class="beta-badge">Coming Soon</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Stop Impulse Spending<br>Before It Happens</h1>
-                <p class="subtitle">
-                    The first prepaid card that blocks transactions in real-time, giving you a moment to pause and consider. Built specifically for adults with ADHD.
-                </p>
-                <a href="#waitlist" class="cta-button">Join the Waitlist</a>
-            </div>
-        </section>
-
-        <section class="problem-section">
-            <div class="container">
-                <h2 style="text-align: center; font-size: 36px; margin-bottom: 20px;">Sound Familiar?</h2>
-                <div class="problem-grid">
-                    <div class="problem-card">
-                        <h3>🌙 The Late-Night Drone</h3>
-                        <p>It's 11pm. You're scrolling. That £400 drone looks incredible. Before you know it, you've checked out. Morning brings regret.</p>
-                    </div>
-                    <div class="problem-card">
-                        <h3>🍻 The Mid-Week Blackout</h3>
-                        <p>Wednesday drinks turned into a £120 bar tab. Your mates had fun, but your grocery budget just evaporated.</p>
-                    </div>
-                    <div class="problem-card">
-                        <h3>📱 The Subscription Graveyard</h3>
-                        <p>£15 here, £10 there. You haven't used that streaming service in months, but it's still charging you.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="solution-section">
-            <div class="container">
-                <h2>How Impulse Card Works</h2>
-                <p class="solution-description">
-                    Traditional banking apps tell you after you've spent. We stop you before. It's prevention, not tracking.
-                </p>
-                <div class="feature-list">
-                    <div class="feature">
-                        <div class="feature-number">1</div>
-                        <h3>Set Your Boundaries</h3>
-                        <p>Define approved categories, merchants, and monthly budgets. Your everyday essentials stay frictionless.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-number">2</div>
-                        <h3>Real-Time Protection</h3>
-                        <p>Transactions outside your rules are blocked instantly. You receive a notification to justify the purchase.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-number">3</div>
-                        <h3>AI Evaluation</h3>
-                        <p>Explain why you need this purchase. Our AI considers your budget, patterns, and goals before approving.</p>
-                    </div>
-                    <div class="feature">
-                        <div class="feature-number">4</div>
-                        <h3>Intentional Spending</h3>
-                        <p>High-value purchases get a 7-day cooling-off period. If you still want it after a week, go for it.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="waitlist-section" id="waitlist">
-            <div class="container">
-                <h2>Join the Founding Members</h2>
-                <p>Be first to access Impulse Card when we launch. Help shape a product built for real people with real challenges.</p>
-                <form class="waitlist-form" action="#" method="post">
-                    <input type="email" class="waitlist-input" placeholder="Enter your email" required>
-                    <button type="submit" class="waitlist-button">Join Waitlist</button>
-                </form>
-                <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
-                    Expected launch: Q2 2026 · No spam, just updates
-                </p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Impulse Card. Built with understanding for the ADHD community.</p>
-            <p style="margin-top: 12px; font-size: 14px;">
-                Pre-launch product. Not yet authorised by the Financial Conduct Authority.
-            </p>
-        </div>
-    </footer>
+    <div class="container">
+        <h1>Impulse Card</h1>
+        <p>Site under development</p>
+    </div>
 </body>
 </html>
